@@ -116,8 +116,8 @@ public class Base {
 				DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 				capabilities.setCapability("marionette", true);
 
-				driver = new FirefoxDriver(capabilities);
-				driver.manage().window().maximize();
+				driver = new FirefoxDriver();
+				//driver.manage().window().maximize();
 
 			} else if (executionBrowser.equalsIgnoreCase("chrome")) {
 
@@ -168,7 +168,7 @@ public class Base {
 			driver.get(wdaApplicationURL);
 
 			// Thread.sleep(3000);
-			driver.switchTo().alert().accept();
+			//driver.switchTo().alert().accept();
 
 			driver.get(wdaApplicationURL);
 
