@@ -65,19 +65,18 @@ public class AddnewLocation extends Base {
 			driver.findElement(By
 					.xpath("html/body/div[2]/div[2]/div[2]/md-dialog-container/app-login-dialog/md-dialog-content/div/button"))
 					.click();
+			
 			Set<String> set = driver.getWindowHandles();
 			System.out.println(set.size());
 			Iterator<String> it = set.iterator();
 			String pid = it.next();
-			// String cid=it.next();
+			//String cid = it.next();
 			driver.switchTo().window(pid);
 			
-
 			driver.findElement(By
 					.xpath("html/body/div[2]/div[2]/div[2]/md-dialog-container/app-login-dialog/md-dialog-content/div/button"))
 					.click();
-			Thread.sleep(2000);
-
+			Thread.sleep(1000);
 			// click on [topleft] button
 			softassert.assertTrue(WebUIAutomation.clickObj("BTN-LEFT_MAT_ICON-ADMIN_PAGE"),
 					"unable to click on [topleft] button");
@@ -95,26 +94,55 @@ public class AddnewLocation extends Base {
 			String loc = "store #456";
 			softassert.assertTrue(WebUIAutomation.setText("INPUT-NEW_LOCATION_NAME-LOCATION_PAGE", loc),
 					"unable to enter on [new location] field");
-			
+
 			// click on [edit] button to set location
 			softassert.assertTrue(WebUIAutomation.clickObj("BTN-EDIT-LOCATION_PAGE"),
 					"unable to click on [edit] button");
 
+			// click on [map]
+			softassert.assertTrue(WebUIAutomation.clickObj("BTN-CLICK_ON_MAP-LOCATION_PAGE"),
+					"unable to click on [map]");
+
 			// click on save button
 			softassert.assertTrue(WebUIAutomation.clickObj("BTN-SAVE_LOCATION-LOCATION_PAGE"),
 					"unable to click on [save] button");
-			
-			
-			//click to [edit] button to save work hours
-			softassert.assertTrue(WebUIAutomation.clickObj("BTN-EDIT_HOUR-LOCATION_PAGE"), "unable to click on [edit] button");
-			
-			//click 
+			Thread.sleep(500);
 
-			// click on [down suggest] arrow
-			// softassert.assertTrue(WebUIAutomation.clickObj("BTN-DOWN_SUGGEST_ARROW-LOCATION_PAGE"),
-			// "unable to click on [down suggest] button");
+			// click to [edit] button to save work hours
+			//driver.findElement(By.xpath(".//*[@id='cdk-overlay-16']/md-dialog-container/app-add-loc-dialog/md-dialog-content/div/div[5]/app-time-picker/div/button")).click();
+			
+			
+			
+			softassert.assertTrue(WebUIAutomation.clickObj("BTN-EDIT_HOUR-LOCATION_PAGE"),
+					"unable to click on [edit] button");
 
-			Thread.sleep(2000);
+			// click on [open time]
+			softassert.assertTrue(WebUIAutomation.clickObj("BTN-OPEN_TIME-LOCATION_PAGE "),
+					"unable to click on [open time] button");
+
+			// select [open time]
+			softassert.assertTrue(WebUIAutomation.clickObj("BTN-SELECT_OPEN_TIME-LOCATION_PAGE"),
+					"unable to select [open time]");
+
+			// click on [close time]
+			softassert.assertTrue(WebUIAutomation.clickObj("BTN-CLOSE_TIME-LOCATION_PAGE"),
+					"unable to click on [close time]");
+
+			// select [close time]
+			softassert.assertTrue(WebUIAutomation.clickObj("BTN-SELECT_CLOSE_TIME-LOCATION_PAGE"),
+					"unable to select [close time]");
+
+			// select [day off]
+			softassert.assertTrue(WebUIAutomation.clickObj("BTN-SELECT_DAY_OFF-LOCATION_PAGE"),
+					"unable to click on [day off]");
+
+			// [save] work hours
+			softassert.assertTrue(WebUIAutomation.clickObj("BTN-SAVE_WORK_HOURS-LOCATION_PAGE"),
+					"unable to [save] save work hours");
+
+			// [add] a new location
+			softassert.assertTrue(WebUIAutomation.clickObj("BTN-ADD_NEW_LOCATION-LOCATION_PAGE"),
+					"unable to [add] new location");
 
 		} catch (Exception e) {
 			// TODO: handle exception
