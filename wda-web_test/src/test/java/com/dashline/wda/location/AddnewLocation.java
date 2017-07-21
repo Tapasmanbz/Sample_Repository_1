@@ -65,14 +65,14 @@ public class AddnewLocation extends Base {
 			driver.findElement(By
 					.xpath("html/body/div[2]/div[2]/div[2]/md-dialog-container/app-login-dialog/md-dialog-content/div/button"))
 					.click();
-			
+
 			Set<String> set = driver.getWindowHandles();
 			System.out.println(set.size());
 			Iterator<String> it = set.iterator();
 			String pid = it.next();
-			//String cid = it.next();
+			// String cid = it.next();
 			driver.switchTo().window(pid);
-			
+
 			driver.findElement(By
 					.xpath("html/body/div[2]/div[2]/div[2]/md-dialog-container/app-login-dialog/md-dialog-content/div/button"))
 					.click();
@@ -109,10 +109,8 @@ public class AddnewLocation extends Base {
 			Thread.sleep(500);
 
 			// click to [edit] button to save work hours
-			//driver.findElement(By.xpath(".//*[@id='cdk-overlay-16']/md-dialog-container/app-add-loc-dialog/md-dialog-content/div/div[5]/app-time-picker/div/button")).click();
-			
-			
-			
+			// driver.findElement(By.xpath(".//*[@id='cdk-overlay-16']/md-dialog-container/app-add-loc-dialog/md-dialog-content/div/div[5]/app-time-picker/div/button")).click();
+
 			softassert.assertTrue(WebUIAutomation.clickObj("BTN-EDIT_HOUR-LOCATION_PAGE"),
 					"unable to click on [edit] button");
 
