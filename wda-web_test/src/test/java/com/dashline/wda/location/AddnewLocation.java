@@ -1,16 +1,10 @@
 package com.dashline.wda.location;
 
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -70,7 +64,8 @@ public class AddnewLocation extends Base {
 			System.out.println(set.size());
 			Iterator<String> it = set.iterator();
 			String pid = it.next();
-			// String cid = it.next();
+			String cid = it.next();
+			driver.switchTo().window(cid);
 			driver.switchTo().window(pid);
 
 			driver.findElement(By
@@ -88,7 +83,8 @@ public class AddnewLocation extends Base {
 			// click on [add new location] button
 			softassert.assertTrue(WebUIAutomation.clickObj("BTN-ADD_NEW_ITEM-LOCATION_PAGE"),
 					"unable to click on [add new location] button");
-			// Thread.sleep(2000);
+
+			 Thread.sleep(2000);
 
 			// enter [new location]
 			String loc = "store #456";
@@ -106,16 +102,16 @@ public class AddnewLocation extends Base {
 			// click on save button
 			softassert.assertTrue(WebUIAutomation.clickObj("BTN-SAVE_LOCATION-LOCATION_PAGE"),
 					"unable to click on [save] button");
-			Thread.sleep(500);
+			
 
-			// click to [edit] button to save work hours
-			// driver.findElement(By.xpath(".//*[@id='cdk-overlay-16']/md-dialog-container/app-add-loc-dialog/md-dialog-content/div/div[5]/app-time-picker/div/button")).click();
-
+			//[EDIT] BUTTON 
 			softassert.assertTrue(WebUIAutomation.clickObj("BTN-EDIT_HOUR-LOCATION_PAGE"),
 					"unable to click on [edit] button");
+			
+			
 
 			// click on [open time]
-			softassert.assertTrue(WebUIAutomation.clickObj("BTN-OPEN_TIME-LOCATION_PAGE "),
+			softassert.assertTrue(WebUIAutomation.clickObj("BTN-OPEN_TIME-LOCATION_PAGE"),
 					"unable to click on [open time] button");
 
 			// select [open time]

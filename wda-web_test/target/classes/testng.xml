@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="WDA Web Application Suite">
+
+	<listeners>
+		<listener class-name="com.dashline.wda.util.ListenerClass" />
+	</listeners>
+
+	<test name="Login">
+		<classes>
+			<class name="com.dashline.wda.common.LoginTest"></class>
+		</classes>
+	</test> <!-- Login -->
+
+	<test name="Signup">
+		<classes>
+			<class name="com.dashline.wda.common.SignupTest"></class>
+		</classes>
+	</test> <!-- Signup -->
+
+	<test name="TestM">
+		<classes>
+			<class name="com.dashline.wda.common.TestM"></class>
+		</classes>
+	</test> <!-- Signup -->
+
+</suite> <!-- WDA Web Application Suite -->

@@ -114,9 +114,9 @@ public class Base {
 				}
 
 				DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-				capabilities.setCapability("marionette", true);
+				//capabilities.setCapability("marionette", true);
 
-				driver = new FirefoxDriver(capabilities);
+				driver = new FirefoxDriver();
 				driver.manage().window().maximize();
 
 			} else if (executionBrowser.equalsIgnoreCase("chrome")) {
